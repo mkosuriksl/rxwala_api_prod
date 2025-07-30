@@ -1,0 +1,12 @@
+[Unit]
+Description=webserver Daemon
+
+[Service]
+WorkingDirectory=/root/aws-code-deploy/rxwala-api/current/target
+ExecStart=/root/.sdkman/candidates/java/current/bin/java -jar stores-0.0.1-SNAPSHOT.jar
+User=root
+StandardOutput=/var/log/rxwala-api-stdout.log
+StandardError=/var/log/rxwala-api-stderr.log
+
+[Install]
+WantedBy=multi-user.target
